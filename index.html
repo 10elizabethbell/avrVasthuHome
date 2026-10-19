@@ -1,0 +1,676 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>AVR Vasthu Home 2D Plan · Vastu house plans, Tirunelveli &amp; Chennai</title>
+<meta name="description" content="Vastu 2D house plans, 3D elevations, floor plans, estimation, online approval plans and plumbing, structural and electrical drawings. Tirunelveli and Chennai.">
+<meta name="theme-color" content="#11304f">
+<meta property="og:type" content="website">
+<meta property="og:title" content="AVR Vasthu Home 2D Plan · Plan your dream home">
+<meta property="og:description" content="Vastu 2D plans from Rs1000, 3D elevations, approval plans and drawings. Tirunelveli and Chennai.">
+<meta property="og:url" content="https://10elizabethbell.github.io/avrVasthuHome/">
+<meta property="og:image" content="https://10elizabethbell.github.io/avrVasthuHome/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+/* ---------- tokens ---------- */
+:root{
+  --ink:#11304f;          /* blueprint ground */
+  --ink-2:#173c62;
+  --ink-line:#cfe2f6;     /* drafted line on blueprint */
+  --ink-soft:#a9c6e4;     /* secondary text on blueprint */
+  --paper:#f6f1e6;        /* drafting paper */
+  --paper-2:#ede5d4;
+  --text:#1a2a3b;
+  --muted:#4b5a6a;
+  --rule:#d6ccb8;
+  --marigold:#f2a516;     /* accent: pen, primary button */
+  --marigold-deep:#c77f00;
+  --focus:#2f78d0;        /* form outline accent (differs from button fill) */
+  --radius:14px;
+  --font:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans Tamil",sans-serif;
+  --pad:20px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overscroll-behavior-y:none;scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--text);font:400 17px/1.55 var(--font);overflow-x:hidden}
+::selection{background:var(--marigold);color:var(--ink)}
+img,svg,canvas{display:block}
+a{color:inherit;text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--marigold);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+h1,h2,h3{font-weight:850;text-transform:uppercase;letter-spacing:-.01em;line-height:1.02;margin:0;text-wrap:balance}
+h2{font-size:clamp(30px,8vw,52px);margin-bottom:22px}
+p{margin:0}
+.tnum{font-variant-numeric:tabular-nums}
+
+/* ---------- header ---------- */
+.top{background:var(--ink);color:#fff;position:relative;z-index:2}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;min-width:0}
+.mark{flex:none;width:40px;height:40px}
+.brand b{display:block;font-weight:850;font-size:14px;letter-spacing:.03em;white-space:nowrap;text-transform:uppercase;line-height:1.1}
+.brand small{display:block;font-size:12px;color:var(--ink-soft);letter-spacing:.04em;line-height:1.2}
+.tel{display:flex;align-items:center;gap:7px;font-weight:750;font-size:16px;text-decoration:none;white-space:nowrap;min-height:44px;padding:0 2px}
+.tel svg{width:18px;height:18px;color:var(--marigold)}
+.tel:hover span{text-decoration:underline}
+
+/* ---------- hero ---------- */
+.hero{background:var(--ink);color:#fff;padding:18px 0 0;overflow:hidden}
+.hero .wrap{display:grid;gap:22px}
+.hero h1{font-size:clamp(40px,12.4vw,84px);max-width:9ch}
+.hero h1 em{font-style:normal;color:var(--marigold)}
+.promise{font-size:clamp(17px,4.6vw,20px);color:var(--ink-soft);max-width:34ch;margin-top:14px;line-height:1.45}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:22px}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;min-height:56px;padding:0 18px;border-radius:12px;font:750 17px/1.1 var(--font);text-decoration:none;border:2px solid var(--marigold);cursor:pointer;text-align:center;transition:background-color .2s,color .2s,transform .15s}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--marigold);color:var(--ink)}
+.btn-primary:hover{background:#ffb72e}
+.btn-ghost{background:transparent;color:#fff}
+.btn-ghost:hover{background:rgba(242,165,22,.12)}
+
+.plan{position:relative;margin:0 calc(var(--pad) * -1);height:min(118vw,470px);
+  background:
+    linear-gradient(rgba(207,226,246,.07) 1px,transparent 1px) 0 0/18px 18px,
+    linear-gradient(90deg,rgba(207,226,246,.07) 1px,transparent 1px) 0 0/18px 18px,
+    var(--ink);
+  -webkit-mask-image:linear-gradient(to bottom,transparent,#000 26px);mask-image:linear-gradient(to bottom,transparent,#000 26px);
+  touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;cursor:crosshair}
+.plan canvas{position:absolute;inset:0;width:100%;height:100%}
+.hint{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:14px;color:var(--ink-soft);pointer-events:none;transition:opacity .6s}
+.hint.gone{opacity:0}
+
+/* ---------- dimension-line divider ---------- */
+.dim{display:block;width:100%;height:22px;color:var(--rule);margin-bottom:34px}
+.dim line,.dim path{stroke:currentColor;stroke-width:1.5;fill:none}
+.dim .run{stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 1.4s cubic-bezier(.16,1,.3,1)}
+.dim.on .run{stroke-dashoffset:0}
+.dim .tick{opacity:0;transition:opacity .4s .9s}
+.dim.on .tick{opacity:1}
+
+/* ---------- sections ---------- */
+section{padding:56px 0}
+.prices{padding-top:40px}
+
+/* price rows: whole row is the link; only the arrow reacts */
+.rows{list-style:none;margin:0;padding:0;border-top:1.5px solid var(--rule)}
+.rows li{border-bottom:1.5px solid var(--rule)}
+.row{display:grid;grid-template-columns:1fr auto 34px;align-items:center;gap:12px;padding:16px 0;text-decoration:none;min-height:64px}
+.row:hover,.row:focus-visible{outline:none;background:none;box-shadow:none}
+.row .name{font-weight:750;font-size:18px;line-height:1.25}
+.row .note{display:block;font-weight:400;font-size:15px;color:var(--muted);margin-top:2px}
+.row .price{font-weight:800;font-size:19px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.row .price.ask{font-weight:600;font-size:16px;color:var(--muted)}
+.arrow{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--rule);display:grid;place-items:center;color:var(--text);transition:background-color .2s,border-color .2s}
+.arrow svg{width:16px;height:16px}
+.row:hover .arrow,.row:focus-visible .arrow{background:var(--marigold);border-color:var(--marigold)}
+.row:focus-visible .arrow{outline:3px solid var(--focus);outline-offset:3px}
+
+/* how we work */
+.care{font-size:clamp(19px,5vw,24px);line-height:1.45;max-width:36ch;font-weight:500}
+.steps{list-style:none;margin:36px 0 0;padding:0;display:grid;gap:26px;counter-reset:s}
+.steps li{display:grid;grid-template-columns:52px 1fr;gap:4px 14px;counter-increment:s}
+.steps li::before{content:counter(s);grid-row:span 2;font-weight:850;font-size:44px;line-height:.9;color:var(--marigold-deep);font-variant-numeric:tabular-nums}
+.steps h3{font-size:20px;line-height:1.15}
+.steps p{color:var(--muted)}
+.area{margin-top:40px;padding-top:22px;border-top:1.5px solid var(--rule);font-size:18px}
+.area strong{font-weight:800;text-transform:uppercase;letter-spacing:.02em}
+
+/* ---------- form ---------- */
+.start{background:var(--paper-2)}
+form{display:grid;gap:26px;max-width:640px}
+fieldset{border:0;margin:0;padding:0;min-width:0}
+legend,.lbl{display:block;font-weight:750;font-size:17px;margin-bottom:10px;padding:0}
+.opt{font-weight:400;color:var(--muted);font-size:15px}
+input[type=text],input[type=tel],input[type=number]{width:100%;min-height:52px;border:1.5px solid #bfb39b;border-radius:10px;background:#fffdf8;padding:0 14px;font:400 17px var(--font);color:var(--text);transition:border-color .15s,box-shadow .15s}
+input::placeholder{color:#7b7466}
+input:hover{border-color:var(--focus)}
+input:focus{outline:none;border-color:var(--focus);box-shadow:0 0 0 3px rgba(47,120,208,.25)}
+.size{display:grid;grid-template-columns:1fr auto 1fr auto;align-items:center;gap:10px}
+.size span{color:var(--muted)}
+/* choice chips (inputs visually hidden but focusable) */
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;width:1px;height:1px;margin:0}
+.chip span{display:flex;align-items:center;min-height:46px;padding:0 16px;border:1.5px solid #bfb39b;border-radius:10px;background:#fffdf8;font-weight:600;font-size:16px;cursor:pointer;transition:border-color .15s,background-color .15s,box-shadow .15s}
+.chip:hover span{border-color:var(--focus)}
+.chip input:focus-visible+span{border-color:var(--focus);box-shadow:0 0 0 3px rgba(47,120,208,.3)}
+.chip input:checked+span{background:var(--ink);border-color:var(--ink);color:#fff}
+/* facing compass */
+.compass{display:grid;grid-template-columns:repeat(3,64px);grid-template-rows:repeat(3,52px);gap:6px;justify-content:start}
+.compass .chip span{justify-content:center;padding:0;height:100%;font-weight:800}
+.compass .n{grid-column:2;grid-row:1}.compass .w{grid-column:1;grid-row:2}
+.compass .e{grid-column:3;grid-row:2}.compass .s{grid-column:2;grid-row:3}
+.compass .hub{grid-column:2;grid-row:2;display:grid;place-items:center;color:var(--muted)}
+.compass .hub svg{width:28px;height:28px}
+.err{display:none;color:#a3261b;font-size:15px;margin-top:8px;font-weight:600}
+.bad .err{display:block}
+.send{max-width:360px;width:100%}
+.btn-send{background:var(--marigold);color:var(--ink);border-color:var(--marigold);width:100%}
+.btn-send:hover{border-color:var(--focus);background:#ffb72e}
+.btn-send:focus-visible{outline:3px solid var(--focus)}
+.after{font-size:16px;color:var(--muted);margin-top:12px;max-width:44ch}
+.after a{font-weight:700;color:var(--text);white-space:nowrap}
+.sent{display:none;margin-top:18px;background:#fffdf8;border:1.5px solid #bfb39b;border-radius:var(--radius);padding:16px;max-width:520px}
+.sent.show{display:block}
+.sent pre{white-space:pre-wrap;font:400 15px/1.5 var(--font);margin:8px 0 12px;color:var(--text)}
+.copybtn{min-height:44px;padding:0 16px;border-radius:10px;border:1.5px solid #bfb39b;background:transparent;font:700 15px var(--font);color:var(--text);cursor:pointer}
+.copybtn:hover,.copybtn:focus-visible{border-color:var(--focus);outline:none;box-shadow:0 0 0 3px rgba(47,120,208,.25)}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:#fff;padding:52px 0 40px}
+footer .big{font-weight:850;text-transform:uppercase;font-size:clamp(28px,8vw,48px);line-height:1;letter-spacing:-.01em;max-width:14ch}
+footer .tag{color:var(--ink-soft);margin-top:12px;max-width:40ch}
+footer .lines{margin-top:28px;display:grid;gap:6px;font-size:17px}
+footer .lines a{font-weight:700;text-decoration:none;display:inline-flex;align-items:center;min-height:44px}
+footer .lines a:hover{text-decoration:underline}
+footer .fine{margin-top:28px;font-size:14px;color:var(--ink-soft)}
+
+/* ---------- desktop ---------- */
+@media (min-width:720px){
+  :root{--pad:32px}
+  .hero .wrap{gap:28px}
+  .actions{max-width:440px}
+  .plan{margin:0;height:520px}
+  .steps{grid-template-columns:repeat(3,1fr);gap:32px}
+  .steps li{grid-template-columns:1fr}
+  .steps li::before{grid-row:auto;margin-bottom:8px}
+}
+@media (min-width:1024px){
+  .hero{padding-top:28px}
+  .hero .wrap{grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:end;gap:48px}
+  .hero .copy{padding-bottom:72px}
+  .plan{height:640px;-webkit-mask-image:linear-gradient(to bottom,transparent,#000 30px),linear-gradient(to right,transparent,#000 60px,#000 calc(100% - 60px),transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(to bottom,transparent,#000 30px),linear-gradient(to right,transparent,#000 60px,#000 calc(100% - 60px),transparent);mask-composite:intersect}
+  .prices .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:56px}
+  .prices .dim{grid-column:1/-1;margin-bottom:0}
+  .rows{border-top:0}
+  section{padding:88px 0}
+  .start .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:56px}
+  .start .dim{grid-column:1/-1;margin-bottom:0}
+  footer .wrap{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+  footer .fine{grid-column:1/-1}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .dim .run{transition:none;stroke-dashoffset:0}.dim .tick{transition:none;opacity:1}
+}
+</style>
+</head>
+<body>
+<!--
+DIRECTION CONTRACT
+THESIS: A Vastu house plan is drafted live in front of you, on blueprint, the way AVR draws a family's home: every room in its right direction.
+OWN-WORLD: The drafting table. Blueprint navy ground, pale drafted walls, a marigold pen tip (auspicious marigold, Tamil Nadu), dimension lines, a compass that always returns to north. Paper-cream sections for reading.
+STORY: Their tagline "Plan your dream home" -> the published price list (the ad's whole point) -> how a plan comes together and why it's done with care -> send plot size + facing direction -> footer with both numbers.
+FIRST VIEWPORT (phone): title-block header with the call number top-right; PLAN YOUR DREAM HOME; their promise; Start my plan / See prices; the plan drawing itself right under the buttons.
+FORM: one page, single file, system type, heavy uppercase display, blueprint + paper. Signature: the self-drafting plan; touch takes the pen (walls snap to the 1-ft grid with live dimensions), the compass needle swings to your finger and springs back to north. Dimension-line dividers draw in on scroll.
+-->
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="AVR Vasthu Home 2D Plan, top of page">
+      <svg class="mark" viewBox="0 0 40 40" aria-hidden="true"><rect x="1.5" y="1.5" width="37" height="37" rx="7" fill="none" stroke="#f2a516" stroke-width="2.4"/><text x="20" y="25.5" text-anchor="middle" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Arial,sans-serif" font-weight="900" font-size="13.5" letter-spacing="-.3" fill="#fff">AVR</text></svg>
+      <span><b>AVR Vasthu Home</b><small>2D Plan</small></span>
+    </a>
+    <a class="tel" href="tel:+919150009835" aria-label="Call 91500 09835"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 0 1 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/></svg><span class="tnum">91500 09835</span></a>
+  </div>
+</header>
+
+<main>
+<section class="hero" aria-label="Plan your dream home">
+  <div class="wrap">
+    <div class="copy">
+      <h1>Plan your <em>dream</em> home</h1>
+      <p class="promise">Turn your dream home into reality with comfort, style and quality you can trust.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#start">Start my plan</a>
+        <a class="btn btn-ghost" href="#prices">See prices</a>
+      </div>
+    </div>
+    <div class="plan" id="plan" role="img" aria-label="A Vastu house plan being drafted: pooja room in the north-east, kitchen in the south-east, master bedroom in the south-west. Drag on it to draw walls.">
+      <canvas id="planCanvas"></canvas>
+      <p class="hint" id="hint">Drag on the plan to draw a wall</p>
+    </div>
+  </div>
+</section>
+
+<section class="prices" id="prices">
+  <div class="wrap">
+    <svg class="dim" viewBox="0 0 1000 22" preserveAspectRatio="none" aria-hidden="true"><line class="tick" x1="1" y1="2" x2="1" y2="20"/><line class="tick" x1="999" y1="2" x2="999" y2="20"/><line class="run" pathLength="1" x1="1" y1="11" x2="999" y2="11"/></svg>
+    <h2>Our prices</h2>
+    <ul class="rows">
+      <li><a class="row" href="#start" data-service="2D Vastu Plan"><span class="name">2D Vastu Plan<span class="note">Ground floor up to 1000 sq ft</span></span><span class="price">Rs 1000</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="3D Elevation"><span class="name">3D Elevation</span><span class="price">Rs 1500</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="3D Floor Plan"><span class="name">3D Floor Plan</span><span class="price">Rs 2000</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="Estimation"><span class="name">Estimation</span><span class="price">Rs 3000</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="Online Approval Plan"><span class="name">Online Approval Plan</span><span class="price">Rs 3000</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="Plumbing Drawing"><span class="name">Plumbing Drawing</span><span class="price">Rs 2500</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="Structural Drawing"><span class="name">Structural Drawing</span><span class="price">Rs 4000</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="Electrical Drawing"><span class="name">Electrical Drawing</span><span class="price">Rs 3000</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="3D Interiors"><span class="name">3D Interiors<span class="note">Per room (10' × 10')</span></span><span class="price">Rs 1500</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+      <li><a class="row" href="#start" data-service="Walkthrough Video"><span class="name">Walkthrough Video</span><span class="price ask">Ask us</span><span class="arrow" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a></li>
+    </ul>
+  </div>
+</section>
+
+<section class="how" id="how">
+  <div class="wrap">
+    <svg class="dim" viewBox="0 0 1000 22" preserveAspectRatio="none" aria-hidden="true"><line class="tick" x1="1" y1="2" x2="1" y2="20"/><line class="tick" x1="999" y1="2" x2="999" y2="20"/><line class="run" pathLength="1" x1="1" y1="11" x2="999" y2="11"/></svg>
+    <h2>Every room in its right place</h2>
+    <p class="care">Your home is the biggest thing your family will ever build. We place every room by Vastu and draw it with care, so you can see your home, and walk through it, before the first brick is laid.</p>
+    <ol class="steps">
+      <li><h3>Tell us your plot</h3><p>Plot size, which way it faces, and how many floors.</p></li>
+      <li><h3>We draw your 2D Vastu plan</h3><p>Every room set in its right direction.</p></li>
+      <li><h3>Add what you need</h3><p>3D elevation, floor plan, estimation, approval plan and drawings.</p></li>
+    </ol>
+    <p class="area"><strong>We work in</strong> Tirunelveli · Chennai</p>
+  </div>
+</section>
+
+<section class="start" id="start">
+  <div class="wrap">
+    <svg class="dim" viewBox="0 0 1000 22" preserveAspectRatio="none" aria-hidden="true"><line class="tick" x1="1" y1="2" x2="1" y2="20"/><line class="tick" x1="999" y1="2" x2="999" y2="20"/><line class="run" pathLength="1" x1="1" y1="11" x2="999" y2="11"/></svg>
+    <h2>Start your plan</h2>
+    <div>
+      <form id="planForm" novalidate>
+        <div class="field" id="f-size">
+          <label class="lbl" for="pw">Plot size in feet</label>
+          <div class="size">
+            <input id="pw" type="number" inputmode="numeric" min="1" placeholder="30" aria-label="Plot width in feet">
+            <span aria-hidden="true">×</span>
+            <input id="pl" type="number" inputmode="numeric" min="1" placeholder="40" aria-label="Plot length in feet">
+            <span>ft</span>
+          </div>
+          <p class="err" role="alert">Enter your plot's width and length in feet.</p>
+        </div>
+
+        <fieldset class="field" id="f-face">
+          <legend>Which way does the plot face?</legend>
+          <div class="compass">
+            <label class="chip n"><input type="radio" name="face" value="North"><span>N</span></label>
+            <label class="chip w"><input type="radio" name="face" value="West"><span>W</span></label>
+            <span class="hub" aria-hidden="true"><svg viewBox="0 0 28 28"><circle cx="14" cy="14" r="12" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M14 4 L17 14 L14 12.5 L11 14 Z" fill="#c77f00"/><path d="M14 24 L11 14 L14 15.5 L17 14 Z" fill="currentColor" opacity=".5"/></svg></span>
+            <label class="chip e"><input type="radio" name="face" value="East"><span>E</span></label>
+            <label class="chip s"><input type="radio" name="face" value="South"><span>S</span></label>
+          </div>
+          <p class="err" role="alert">Choose the direction your plot faces (the side the road is on).</p>
+        </fieldset>
+
+        <fieldset class="field">
+          <legend>Floors <span class="opt">(optional)</span></legend>
+          <div class="chips">
+            <label class="chip"><input type="radio" name="floors" value="Ground floor"><span>Ground</span></label>
+            <label class="chip"><input type="radio" name="floors" value="G+1"><span>G+1</span></label>
+            <label class="chip"><input type="radio" name="floors" value="G+2"><span>G+2</span></label>
+            <label class="chip"><input type="radio" name="floors" value="More than G+2"><span>More</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset class="field" id="f-need">
+          <legend>What do you need?</legend>
+          <div class="chips">
+            <label class="chip"><input type="checkbox" name="need" value="2D Vastu Plan"><span>2D Vastu Plan</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="3D Elevation"><span>3D Elevation</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="3D Floor Plan"><span>3D Floor Plan</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="Estimation"><span>Estimation</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="Online Approval Plan"><span>Online Approval Plan</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="Plumbing Drawing"><span>Plumbing</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="Structural Drawing"><span>Structural</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="Electrical Drawing"><span>Electrical</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="3D Interiors"><span>3D Interiors</span></label>
+            <label class="chip"><input type="checkbox" name="need" value="Walkthrough Video"><span>Walkthrough Video</span></label>
+          </div>
+          <p class="err" role="alert">Pick at least one thing you need.</p>
+        </fieldset>
+
+        <div class="field" id="f-name">
+          <label class="lbl" for="nm">Your name</label>
+          <input id="nm" type="text" autocomplete="name">
+          <p class="err" role="alert">Enter your name so we know who's texting.</p>
+        </div>
+        <div class="field">
+          <label class="lbl" for="town">Town <span class="opt">(optional)</span></label>
+          <input id="town" type="text" autocomplete="address-level2" placeholder="Tirunelveli">
+        </div>
+
+        <div class="send">
+          <button class="btn btn-send" type="submit">Text us these details</button>
+          <p class="after">Opens a text message to 91500 09835 with your details written in. Rather talk? Call <a href="tel:+919150009835" class="tnum">91500 09835</a> or <a href="tel:+918925978473" class="tnum">89259 78473</a>.</p>
+        </div>
+        <div class="sent" id="sent" aria-live="polite">
+          <strong>Your message</strong>
+          <pre id="msg"></pre>
+          <button type="button" class="copybtn" id="copy">Copy message</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <p class="big">AVR Vasthu Home 2D Plan</p>
+      <p class="tag">We are providing good design and good quality.</p>
+    </div>
+    <div class="lines">
+      <a href="tel:+919150009835" class="tnum">91500 09835</a>
+      <a href="tel:+918925978473" class="tnum">89259 78473</a>
+      <span>Tirunelveli · Chennai, Tamil Nadu</span>
+    </div>
+    <p class="fine">© 2026 AVR Vasthu Home 2D Plan</p>
+  </div>
+</footer>
+
+<script>
+/* ---------- the drafting table: plan draws itself; touch takes the pen ---------- */
+(function(){
+  // tunables
+  var PEN_SPEED = 34;      // feet of wall per second
+  var LIFT = 0.18;         // seconds the pen takes to hop between walls
+  var HOLD = 5.5;          // seconds the finished plan stays up
+  var FADE = 1.2;          // seconds to fade before redrawing
+  var USER_LIFE = 9;       // seconds a wall you drew stays before fading
+  var RESUME = 2.5;        // seconds after your last touch before the pen carries on
+  var BW = 28, BH = 36;    // building footprint, feet (north up)
+
+  var box = document.getElementById('plan'), cv = document.getElementById('planCanvas');
+  var hint = document.getElementById('hint');
+  if(!cv.getContext) return;
+  var ctx = cv.getContext('2d');
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // walls in drafting order: [x1,y1,x2,y2]; gaps are doors and openings
+  var walls = [
+    [0,0,28,0],[28,0,28,9],[28,12,28,36],[28,36,0,36],[0,36,0,0],
+    [11,0,11,10],[11,13,11,14],
+    [21,0,21,2],[21,5,21,9],[21,12,21,14],[21,7,28,7],
+    [0,14,13,14],[19,14,23,14],[26,14,28,14],
+    [7,14,7,16],[7,19,7,22],[21,14,21,16],[21,19,21,22],
+    [0,22,9,22],[12,22,16,22],[19,22,28,22],
+    [15,22,15,36]
+  ];
+  // fittings drawn after the walls (thin lines): kitchen counter, stair treads
+  var fit = [[16,34,26,34],[26,34,26,23]];
+  for(var t=16;t<=21;t++) fit.push([22,t,27,t]);
+  // door swings: hinge x,y, radius, start angle, end angle (radians), leaf end
+  var doors = [
+    [28,9,3,Math.PI,Math.PI*1.5],      // main door, east
+    [11,10,3,0,Math.PI*0.5],          // bedroom
+    [21,2,3,Math.PI*0.5,Math.PI],     // pooja
+    [7,16,3,0,Math.PI*0.5],           // toilet
+    [9,22,3,0,Math.PI*0.5]            // master bed
+  ];
+  var rooms = [
+    ['BEDROOM','11′ × 14′',5.5,6.5],['HALL','10′ × 14′',16,7],['POOJA','NE',24.5,3.2],
+    ['SIT-OUT','7′ × 7′',24.5,10.5],['TOILET','',3.5,18],['DINING','14′ × 8′',13,18],
+    ['STAIRS','',24.5,15.1],['MASTER BED','SW · 15′ × 14′',7.5,29],['KITCHEN','SE · 13′ × 14′',20.5,29]
+  ];
+
+  // timeline
+  var segs = [], T = 0;
+  walls.forEach(function(w){ var L = Math.hypot(w[2]-w[0],w[3]-w[1]); T += LIFT; segs.push({w:w,t0:T,t1:T+L/PEN_SPEED}); T += L/PEN_SPEED; });
+  var tWalls = T, tFit = tWalls + 1.0, tLabels = tFit + 1.4, tDims = tLabels + 1.0, tEnd = tDims + HOLD, tCycle = tEnd + FADE;
+
+  var W=0,H=0,dpr=1,s=10,ox=0,oy=0,grid=null;
+  function layout(){
+    var r = box.getBoundingClientRect(), w = Math.round(r.width), h = Math.round(r.height);
+    if(w===W && h===H) return false;   // address-bar resizes: keep what was drawn
+    W=w; H=h; dpr = Math.min(window.devicePixelRatio||1, 2);
+    cv.width = W*dpr; cv.height = H*dpr;
+    var mL = 6.5, mR = 3.5, mT = 8.5, mB = W<720 ? 6 : 4;   // feet of margin (dims left/top, compass top-right, hint below)
+    s = Math.min(W/(BW+mL+mR), H/(BH+mT+mB));
+    ox = Math.round((W - BW*s)/2 + (mL-mR)*s/2);
+    oy = Math.round((H - BH*s)/2 + (mT-mB)*s/2);
+    // grid aligned to the plan, prerendered
+    grid = document.createElement('canvas'); grid.width = cv.width; grid.height = cv.height;
+    var g = grid.getContext('2d'); g.scale(dpr,dpr);
+    var x0 = ox % s, y0 = oy % s, i=0;
+    for(var x = x0 - s; x < W; x += s){ var maj = Math.round((x-ox)/s)%5===0; g.fillStyle = maj?'rgba(207,226,246,.13)':'rgba(207,226,246,.055)'; g.fillRect(Math.round(x),0,1,H); }
+    for(var y = y0 - s; y < H; y += s){ var maj2 = Math.round((y-oy)/s)%5===0; g.fillStyle = maj2?'rgba(207,226,246,.13)':'rgba(207,226,246,.055)'; g.fillRect(0,Math.round(y),W,1); }
+    box.style.background = 'var(--ink)';
+    return true;
+  }
+  function X(f){return ox+f*s} function Y(f){return oy+f*s}
+  function ftin(f){ return Math.round(f)+'′-0″'; }
+
+  // compass: needle springs back to north, swings toward a nearby finger
+  var nd = {a:0,v:0};
+  function compassXY(){ return [X(BW)+1.6*s, Y(-4.6)]; }
+
+  // user walls
+  var user = [], drag = null, ptr = null, lastTouch = -1e9, touched = false;
+  function toFeet(cx,cy){ var r = cv.getBoundingClientRect(); return [(cx-r.left-ox)/s,(cy-r.top-oy)/s]; }
+
+  function line(x1,y1,x2,y2){ ctx.beginPath(); ctx.moveTo(X(x1),Y(y1)); ctx.lineTo(X(x2),Y(y2)); ctx.stroke(); }
+
+  function dimLabel(x,y,text,rot,alpha,color){
+    ctx.save(); ctx.globalAlpha = alpha; ctx.translate(x,y); if(rot) ctx.rotate(rot);
+    ctx.font = '600 '+Math.max(11,Math.round(s*1.15))+'px '+getComputedStyle(document.body).fontFamily;
+    var tw = ctx.measureText(text).width;
+    ctx.fillStyle = '#11304f'; ctx.fillRect(-tw/2-4,-9,tw+8,18);
+    ctx.fillStyle = color; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(text,0,1);
+    ctx.restore();
+  }
+
+  function draw(tl, now, dt){
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.clearRect(0,0,W,H);
+    ctx.drawImage(grid,0,0,W,H);
+    var fadeA = tl>tEnd ? Math.max(0,1-(tl-tEnd)/FADE) : 1;
+    var font = getComputedStyle(document.body).fontFamily;
+    ctx.lineCap='square'; ctx.lineJoin='miter';
+
+    // walls
+    ctx.globalAlpha = fadeA;
+    ctx.strokeStyle = '#e4efff'; ctx.lineWidth = Math.max(3, s*0.42);
+    var pen = null;
+    for(var i=0;i<segs.length;i++){
+      var g = segs[i], w = g.w;
+      if(tl < g.t0){ if(!pen && i>0){ var pw = segs[i-1].w; pen=[pw[2],pw[3]]; } break; }
+      var k = Math.min(1,(tl-g.t0)/(g.t1-g.t0));
+      var ex = w[0]+(w[2]-w[0])*k, ey = w[1]+(w[3]-w[1])*k;
+      line(w[0],w[1],ex,ey);
+      if(k<1) pen=[ex,ey];
+    }
+    // fittings + door swings
+    if(tl>tWalls){
+      var kf = Math.min(1,(tl-tWalls)/(tFit-tWalls));
+      ctx.globalAlpha = fadeA*kf; ctx.lineWidth = 1.2; ctx.strokeStyle = '#a9c6e4';
+      fit.forEach(function(f){ line(f[0],f[1],f[2],f[3]); });
+      ctx.setLineDash([3,3]);
+      doors.forEach(function(d){ ctx.beginPath(); ctx.arc(X(d[0]),Y(d[1]),d[2]*s,d[3],d[3]+(d[4]-d[3])*kf); ctx.stroke(); });
+      ctx.setLineDash([]); ctx.lineWidth = 2; ctx.strokeStyle = '#e4efff';
+      doors.forEach(function(d){ var a = d[3]+(d[4]-d[3])*kf; line(d[0],d[1],d[0]+Math.cos(a)*d[2],d[1]+Math.sin(a)*d[2]); });
+    }
+    // room labels
+    if(tl>tFit){
+      ctx.textAlign='center'; ctx.textBaseline='middle';
+      var fs = Math.max(10, Math.min(14, s*1.05));
+      rooms.forEach(function(r,i){
+        var a = Math.max(0,Math.min(1,(tl-tFit-i*0.12)/0.35)) * fadeA; if(a<=0) return;
+        ctx.globalAlpha = a;
+        ctx.fillStyle = r[0]==='POOJA' ? '#f2a516' : '#e4efff';
+        ctx.font = '750 '+fs+'px '+font; ctx.fillText(r[0], X(r[2]), Y(r[3]) - (r[1]?fs*0.55:0));
+        if(r[1]){ ctx.fillStyle='#a9c6e4'; ctx.font = '500 '+(fs-1.5)+'px '+font; ctx.fillText(r[1], X(r[2]), Y(r[3])+fs*0.75); }
+      });
+    }
+    // overall dimensions
+    if(tl>tLabels){
+      var kd = Math.min(1,(tl-tLabels)/(tDims-tLabels)), e = 1-Math.pow(1-kd,3);
+      ctx.globalAlpha = fadeA; ctx.strokeStyle='#a9c6e4'; ctx.lineWidth=1.2;
+      var dy = -2.6, dx = -2.6;
+      line(BW/2-BW/2*e,dy,BW/2+BW/2*e,dy); line(0,dy-0.8,0,dy+0.8); line(BW,dy-0.8,BW,dy+0.8);
+      line(dx,BH/2-BH/2*e,dx,BH/2+BH/2*e); line(dx-0.8,0,dx+0.8,0); line(dx-0.8,BH,dx+0.8,BH);
+      if(kd>0.6){ var la=(kd-0.6)/0.4*fadeA; dimLabel(X(BW/2),Y(dy),ftin(BW),0,la,'#cfe2f6'); dimLabel(X(dx),Y(BH/2),ftin(BH),-Math.PI/2,la,'#cfe2f6'); }
+    }
+    ctx.globalAlpha = 1;
+
+    // pen tip
+    if(pen && tl<tWalls){
+      var px = X(pen[0]), py = Y(pen[1]);
+      ctx.fillStyle = 'rgba(242,165,22,.25)'; ctx.beginPath(); ctx.arc(px,py,9,0,7); ctx.fill();
+      ctx.fillStyle = '#f2a516'; ctx.beginPath(); ctx.arc(px,py,4,0,7); ctx.fill();
+    }
+
+    // walls you drew
+    ctx.lineWidth = Math.max(3, s*0.42); ctx.strokeStyle = '#f2a516';
+    for(var j=user.length-1;j>=0;j--){
+      var u = user[j], age = (now-u.born)/1000;
+      if(age>USER_LIFE){ user.splice(j,1); continue; }
+      ctx.globalAlpha = Math.min(1,(USER_LIFE-age)/2);
+      line(u.x1,u.y1,u.x2,u.y2);
+    }
+    ctx.globalAlpha = 1;
+    if(drag){
+      line(drag.x1,drag.y1,drag.x2,drag.y2);
+      ctx.fillStyle='#f2a516'; ctx.beginPath(); ctx.arc(X(drag.x2),Y(drag.y2),5,0,7); ctx.fill();
+      var L = Math.abs(drag.x2-drag.x1)+Math.abs(drag.y2-drag.y1);
+      if(L>0){
+        var horiz = drag.y1===drag.y2;
+        dimLabel(X((drag.x1+drag.x2)/2)+(horiz?0:-22), Y((drag.y1+drag.y2)/2)+(horiz?-18:0), ftin(L), 0, 1, '#f2a516');
+      }
+    }
+
+    // compass
+    var c = compassXY(), R = Math.max(14, s*1.45);
+    var target = 0;
+    if(ptr){
+      var pr = cv.getBoundingClientRect(), pxl = ptr[0]-pr.left, pyl = ptr[1]-pr.top;
+      var d = Math.hypot(pxl-c[0], pyl-c[1]);
+      if(d < R*9){ var want = Math.atan2(pxl-c[0], -(pyl-c[1])); target = want * Math.max(0, 1-d/(R*9)) * 1.6; }
+    }
+    var wob = Math.sin(now/700)*0.05 + Math.sin(now/310+1.3)*0.03;
+    nd.v += ((target+wob) - nd.a) * 38 * dt; nd.v *= Math.exp(-5.5*dt); nd.a += nd.v*dt;
+    ctx.save(); ctx.translate(c[0],c[1]);
+    ctx.strokeStyle='rgba(207,226,246,.55)'; ctx.lineWidth=1.2; ctx.beginPath(); ctx.arc(0,0,R,0,7); ctx.stroke();
+    ctx.fillStyle='#cfe2f6'; ctx.font='800 '+Math.round(R*0.62)+'px '+font; ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText('N',0,-R-R*0.55);
+    ctx.rotate(nd.a);
+    ctx.fillStyle='#f2a516'; ctx.beginPath(); ctx.moveTo(0,-R*0.85); ctx.lineTo(R*0.22,0); ctx.lineTo(-R*0.22,0); ctx.closePath(); ctx.fill();
+    ctx.fillStyle='rgba(207,226,246,.6)'; ctx.beginPath(); ctx.moveTo(0,R*0.85); ctx.lineTo(R*0.22,0); ctx.lineTo(-R*0.22,0); ctx.closePath(); ctx.fill();
+    ctx.restore();
+  }
+
+  // pointer: drag draws a wall snapped to the 1-ft grid, straight along the stronger direction
+  function snap(v){ return Math.round(v); }
+  box.addEventListener('pointerdown', function(e){
+    e.preventDefault();
+    try{ box.setPointerCapture(e.pointerId); }catch(_){}
+    ptr = [e.clientX,e.clientY];
+    drag = {cx:e.clientX, cy:e.clientY, x1:0,y1:0,x2:0,y2:0};
+    var f = toFeet(e.clientX,e.clientY); drag.x1 = drag.x2 = snap(f[0]); drag.y1 = drag.y2 = snap(f[1]);
+    lastTouch = performance.now(); kick();
+  });
+  box.addEventListener('pointermove', function(e){ ptr = [e.clientX,e.clientY]; if(drag) lastTouch = performance.now(); kick(); });
+  function end(){
+    if(drag){
+      if(drag.x1!==drag.x2 || drag.y1!==drag.y2){
+        user.push({x1:drag.x1,y1:drag.y1,x2:drag.x2,y2:drag.y2,born:performance.now()});
+        if(user.length>40) user.shift();
+        if(!touched){ touched = true; hint.classList.add('gone'); }
+      }
+      drag = null; lastTouch = performance.now();
+    }
+  }
+  box.addEventListener('pointerup', end); box.addEventListener('pointercancel', end);
+  box.addEventListener('pointerleave', function(e){ if(e.pointerType==='mouse'){ ptr = null; } });
+  // a finger on the hero shouldn't pull-to-refresh or scroll the page
+  box.addEventListener('touchmove', function(e){ if(drag) e.preventDefault(); }, {passive:false});
+
+  function updateDrag(){
+    if(!drag || !ptr) return;
+    var f = toFeet(ptr[0],ptr[1]);     // rect read every frame: the page may move under the finger
+    var dx = f[0]-drag.x1, dy = f[1]-drag.y1;
+    if(Math.abs(dx) >= Math.abs(dy)){ drag.x2 = snap(f[0]); drag.y2 = drag.y1; }
+    else { drag.y2 = snap(f[1]); drag.x2 = drag.x1; }
+  }
+
+  // one loop; paused off screen
+  var visible = true, running = false, last = 0, tl = 0;
+  function frame(now){
+    if(!visible){ running = false; return; }
+    var dt = Math.min(0.05, (now-(last||now))/1000); last = now;
+    if(now - lastTouch > RESUME*1000 && !reduce) tl = (tl + dt) % tCycle;
+    updateDrag();
+    draw(tl, now, dt);
+    if(reduce && !drag && !user.length && Math.abs(nd.v)<0.001){ running = false; return; }
+    requestAnimationFrame(frame);
+  }
+  function kick(){ if(!running && visible){ running = true; last = 0; requestAnimationFrame(frame); } }
+
+  layout();
+  if(reduce) tl = tDims + 0.01;
+  new ResizeObserver(function(){ if(layout()) kick(); }).observe(box);
+  if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){ visible = es[0].isIntersecting; kick(); }).observe(box);
+  }
+  kick();
+})();
+
+/* ---------- dimension-line dividers draw in ---------- */
+(function(){
+  var dims = document.querySelectorAll('.dim');
+  if(!('IntersectionObserver' in window)){ dims.forEach(function(d){ d.classList.add('on'); }); return; }
+  var io = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target); } }); }, {rootMargin:'0px 0px -12% 0px'});
+  dims.forEach(function(d){ io.observe(d); });
+})();
+
+/* ---------- price rows pre-tick the service in the form ---------- */
+(function(){
+  document.querySelectorAll('.row[data-service]').forEach(function(a){
+    a.addEventListener('click', function(){
+      var box = document.querySelector('input[name=need][value="'+a.dataset.service+'"]');
+      if(box) box.checked = true;
+    });
+  });
+})();
+
+/* ---------- form: compose a text message ---------- */
+(function(){
+  var form = document.getElementById('planForm'), sent = document.getElementById('sent'), msg = document.getElementById('msg');
+  var NUMBER = '+919150009835';
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function pick(name){ return Array.prototype.map.call(form.querySelectorAll('input[name='+name+']:checked'), function(i){ return i.value; }); }
+  function flag(id, bad){ document.getElementById(id).classList.toggle('bad', bad); return bad; }
+  form.addEventListener('change', function(){ if(form.dataset.tried) check(); });
+  form.addEventListener('input', function(){ if(form.dataset.tried) check(); });
+  function check(){
+    var w = +val('pw'), l = +val('pl');
+    var b1 = flag('f-size', !(w>0 && l>0));
+    var b2 = flag('f-face', !pick('face').length);
+    var b3 = flag('f-need', !pick('need').length);
+    var b4 = flag('f-name', !val('nm'));
+    return [b1,b2,b3,b4];
+  }
+  form.addEventListener('submit', function(e){
+    e.preventDefault(); form.dataset.tried = '1';
+    var bad = check(), firstBad = ['f-size','f-face','f-need','f-name'][bad.indexOf(true)];
+    if(firstBad){
+      var el = document.getElementById(firstBad); el.scrollIntoView({behavior:'smooth',block:'center'});
+      var inp = el.querySelector('input'); if(inp) inp.focus({preventScroll:true});
+      return;
+    }
+    var floors = pick('floors')[0], town = val('town');
+    var text = 'Hello AVR Vasthu Home, I would like a plan.\n'
+      + 'Plot: ' + val('pw') + ' x ' + val('pl') + ' ft, ' + pick('face')[0] + ' facing\n'
+      + (floors ? 'Floors: ' + floors + '\n' : '')
+      + 'Need: ' + pick('need').join(', ') + '\n'
+      + 'Name: ' + val('nm') + (town ? '\nTown: ' + town : '');
+    msg.textContent = text; sent.classList.add('show');
+    window.location.href = 'sms:' + NUMBER + '?&body=' + encodeURIComponent(text);
+  });
+  document.getElementById('copy').addEventListener('click', function(){
+    var b = this;
+    (navigator.clipboard ? navigator.clipboard.writeText(msg.textContent) : Promise.reject()).then(function(){ b.textContent = 'Copied'; }, function(){
+      var r = document.createRange(); r.selectNodeContents(msg); var s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = 'Selected: copy it now';
+    });
+  });
+})();
+</script>
+</body>
+</html>
