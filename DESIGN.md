@@ -20,6 +20,7 @@ colors:
   muted: "#4b5a6a"
   placeholder: "#756e60"
   error: "#a3261b"
+  white: "#ffffff"
 typography:
   display:
     fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
@@ -63,7 +64,48 @@ typography:
     fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.5
+  wordmark:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "clamp(28px, 8vw, 48px)"
+    fontWeight: 850
+    lineHeight: 1
+  numeral:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "44px"
+    fontWeight: 850
+    lineHeight: 0.9
+  body-lg:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "18px"
+    fontWeight: 400
+    lineHeight: 1.55
+  small:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "16px"
+    fontWeight: 400
+    lineHeight: 1.5
+  note:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "15px"
+    fontWeight: 400
+    lineHeight: 1.45
+  caption:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "14px"
+    fontWeight: 400
+    lineHeight: 1.4
+  brand-name:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "13px"
+    fontWeight: 850
+    lineHeight: 1.1
+  brand-sub:
+    fontFamily: "-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans Tamil, sans-serif"
+    fontSize: "12px"
+    fontWeight: 400
+    lineHeight: 1.2
 rounded:
+  focus: "6px"
   field: "10px"
   button: "12px"
   panel: "14px"
