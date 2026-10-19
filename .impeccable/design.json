@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-19T09:40:08+00:00",
+  "generatedAt": "2026-10-19T23:25:54+00:00",
   "title": "Design System: AVR Vasthu Home 2D Plan",
   "extensions": {
     "colorMeta": {
@@ -272,6 +272,14 @@
           "#fa7866",
           "#ffa593",
           "#ffd7c9"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "Sheet White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "#ffffff"
         ]
       }
     },
