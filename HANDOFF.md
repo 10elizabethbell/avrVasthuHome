@@ -9,7 +9,7 @@
 - **World:** the drafting table. Blueprint-navy hero, drafting-paper sections, marigold pen/accent (auspicious marigold, Tamil Nadu). Dimension-line dividers draw in as you scroll.
 - **Signature:** a Vastu floor plan (28′ × 36′, north up: pooja NE, kitchen SE, master bed SW) drafts itself wall by wall with a marigold pen tip, then doors, stairs, labels and overall dimensions; holds, fades, redraws. A finger or mouse takes the pen: drag to draw walls that snap to the 1-ft grid with a live length label (works up/down/sideways on phones; page doesn't scroll while drawing on the plan). The compass needle swings toward your finger and springs back to north.
 - **Prices:** all 10 lines verbatim from the ad (Rs, not rounded/converted). Each row links to the form and pre-ticks that service; only the arrow highlights on hover.
-- **Form:** plot size, facing (N/E/S/W compass picker), floors (optional), services, name, town (optional) → opens an SMS to +91 91500 09835 with the details written in; shows the message with a Copy button; call links to both numbers right under the button.
+- **Form:** plot size, facing (N/E/S/W compass picker, "road side"), floors (optional), services, name, town (optional) → opens an SMS to +91 91500 09835 with the details written in, and shows the message with a Copy button (desktop fallback). A small blueprint beside the form draws the visitor's own plot to scale as they type, with the road on the side they picked. Calling = the header number and both numbers in the footer (kept off the form so a number never shows twice on one screen).
 - Favicon / home-screen icon from the "AVR" lettering (no logo exists); og image (1200×630) of the hero plan.
 
 ## Assumptions I made
@@ -44,6 +44,12 @@
 - Tamil/English toggle.
 - Facing picker that redraws the hero plan for the chosen direction (east/west/north/south-facing Vastu layouts).
 - Document upload for "Online Approval Plan" (needs a backend; Muse suggested it as the hook).
+
+## Impeccable pass (every mode except live)
+Finish reviewer + critique, audit, harden, optimize, adapt, clarify, polish, layout, typeset, colorize, bolder, quieter, distill, animate, delight, overdrive. Applied: 360px header collision, landscape-phone scroll trap (plan height capped by `svh`), focus ring/field border contrast, checked-chip hover outline, accessible errors (`aria-invalid`/`aria-describedby`), compass radio order, text inputs instead of `type=number`, faster pen (60 ft/s, 9 s hold, opens on the finished outer walls), bigger canvas labels with the grid cleared behind them, drawn walls keep their length label, bigger price figures, sticky headings on desktop, plot preview (overdrive), duplicate phone line removed.
+Rejected as against your rules: hero Call button / sticky bar, web fonts, WhatsApp, row hover tint, letting vertical swipes scroll the plan.
+Detector findings left standing on purpose: `cream-palette` (drafting paper is the world), `flat-type-hierarchy` (counts only small UI sizes; display headings are clamp()), `cramped-padding` ×2 (hero plan bleeds to the section edge; price list top rule). `overused-font roboto` ignored in `.impeccable/config.json` (system stack is house style).
+Process note: the direction was chosen unattended without a concept-roll seed.
 
 ## Not verified
 - Real-device touch (iOS Safari, Android Chrome, Facebook in-app browser) — tested only with simulated pointer events in headless Chrome.

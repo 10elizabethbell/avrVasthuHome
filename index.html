@@ -20,7 +20,6 @@
 /* ---------- tokens ---------- */
 :root{
   --ink:#11304f;          /* blueprint ground */
-  --ink-2:#173c62;
   --ink-line:#cfe2f6;     /* drafted line on blueprint */
   --ink-soft:#a9c6e4;     /* secondary text on blueprint */
   --paper:#f6f1e6;        /* drafting paper */
@@ -88,7 +87,7 @@ p{margin:0}
   -webkit-mask-image:linear-gradient(to bottom,transparent,#000 26px);mask-image:linear-gradient(to bottom,transparent,#000 26px);
   touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none;cursor:crosshair}
 .plan canvas{position:absolute;inset:0;width:100%;height:100%}
-.hint{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:14px;color:var(--ink-soft);pointer-events:none;transition:opacity .6s;text-shadow:0 0 4px var(--ink),0 0 8px var(--ink),0 0 12px var(--ink)}
+.hint{position:absolute;left:0;right:0;bottom:12px;text-align:center;font-size:14px;color:var(--ink-soft);pointer-events:none;transition:opacity .6s}
 .hint.gone{opacity:0}
 
 /* ---------- dimension-line divider ---------- */
@@ -449,6 +448,9 @@ FORM: one page, single file, system type, heavy uppercase display, blueprint + p
     var x0 = ox % s, y0 = oy % s, i=0;
     for(var x = x0 - s; x < W; x += s){ var maj = Math.round((x-ox)/s)%5===0; g.fillStyle = maj?'rgba(207,226,246,.13)':'rgba(207,226,246,.055)'; g.fillRect(Math.round(x),0,1,H); }
     for(var y = y0 - s; y < H; y += s){ var maj2 = Math.round((y-oy)/s)%5===0; g.fillStyle = maj2?'rgba(207,226,246,.13)':'rgba(207,226,246,.055)'; g.fillRect(0,Math.round(y),W,1); }
+    // keep the hint line clear of grid lines
+    var hr = hint.getBoundingClientRect(), br = box.getBoundingClientRect();
+    g.clearRect(0, hr.top-br.top-6, W, hr.height+12);
     return true;
   }
   function X(f){return ox+f*s} function Y(f){return oy+f*s}
